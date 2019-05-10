@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <link
+      href="/css/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      color: bisque;
+    }
+
+    .bg {
+      background-image: url("https://images.unsplash.com/photo-1556301646-95717373eecc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+      height: 100%;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .center {
+      margin: auto;
+      width: 50%;
+      padding: 5px;
+    }
+
+    .slideDown {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+    }
+
+    .resize {
+      width: 30%;
+    }
+  </style>
+  <script type="text/javascript">
+    function cancle() {
+      document.getElementById("wuser").innerHTML = "";
+      document.getElementById("wpassword").innerHTML = "";
+    }
+    function validateForm() {
+      var checkuser = document.forms["Login"]["user"].value;
+      var checkPassword = document.forms["Login"]["password"].value;
+      if (checkuser == "" && checkPassword == "") {
+        document.getElementById("wuser").style.display = "block";
+        document.getElementById("user").style = "border-color: red;";
+        document.getElementById("wPassword").style.display = "block";
+        document.getElementById("password").style = "border-color: red;";
+        return false;
+      } else {
+        if (checkuser == "") {
+          document.getElementById("wuser").style.display = "block";
+          document.getElementById("user").style = "border-color: red;";
+          document.getElementById("wPassword").style.display = "none";
+          document.getElementById("password").style = "";
+          return false;
+        } else if (checkPassword == "") {
+          document.getElementById("wPassword").style.display = "block";
+          document.getElementById("password").style = "border-color: red;";
+          document.getElementById("wuser").style.display = "none";
+          document.getElementById("user").style = "";
+          return false;
+        } else {
+          document.getElementById("wuser").style.display = "none";
+          document.getElementById("wPassword").style.display = "none";
+          document.getElementById("user").style = "";
+          document.getElementById("password").style = "";
+          document.getElementById("formLogin").action = "/login/post";
+          return true;
+        }
+      }
+    }
+  </script>
+  <div class="bg">
+    <div class="container">
+      <div class="center slideDown resize">
+        <h1 style="color: white text-center">Login Page</h1>
+        <form method="post" name="Login" id="formLogin">
+          <div class="card bg-dark">
+            <div class="card-body">
+              <label>user</label>
+              <input
+                id="user"
+                type="text"
+                name="user"
+                class="form-control"
+                maxlength="15"
+              />
+              <p id="wuser" style="color: red; display: none">กรุณาใส่ user</p>
+              <label>password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                class="form-control"
+                maxlength="15"
+              />
+              <p id="wPassword" style="color: red; display: none">
+                กรุณาใส่ password
+              </p>
+              <br />
+              <div class="row">
+                <div class="col">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg btn-block"
+                    onclick="return validateForm()"
+                  >
+                    Login
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                  type="reset" value="Reset"
+                    class="btn btn-primary btn-lg btn-block"
+                  >
+                    Cancle
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</html>

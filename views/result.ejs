@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body,
+        h1 {
+            font-family: "Raleway", sans-serif
+        }
+
+        body,
+        html {
+            height: 100%
+        }
+
+        .bgimg {
+            background-image: url('https://images.unsplash.com/photo-1556206242-cf254f039928?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: hand;
+            border-radius: 4px;
+            background-color: white;
+            color: black;
+            border: 2px solid rgb(186, 0, 0);
+        }
+
+        button:hover {
+            background-color: rgb(186, 0, 0);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>  
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-middle w3-card w3-container">
+            <h1 class="w3-jumbo w3-animate-top w3-center" style="color: beige">
+                Result
+            </h1>
+            <hr class="w3-border-grey" style="margin:auto;width:100%">
+            <div class="form-group w3-xxxlarge w3-animate-top">
+                
+                <label >user: </label>
+                <label > <%= user %></label> <br>
+
+                <label >ชื่อ-สกุล: </label>
+                <label> <%= name %></label><br>
+
+                <label>ตำแหน่งงาน: </label>
+                <label>  <%= doctype %></label><br>  
+
+                <label >เงินเดือน: </label>
+                <label > <%= salary %></label><br>
+
+                <label>เงินot: </label>
+                <label>  <%= ot %></label><br>
+
+                <label >เงินโบนัส: </label>
+                <label > <%= bonus %></label><br>
+
+                <label >เงินได้สุทธิ: </label>
+                <label > <%= totalSa %></label>
+            </div>
+            <h1>
+                <hr class="w3-border-grey" style="margin:auto;width:100%">
+            </h1>
+
+            <div class="form-group w3-xxxlarge w3-animate-top">
+                <button type="submit" class="w3-block" onclick="window.history.back();">Back</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
